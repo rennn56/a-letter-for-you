@@ -143,20 +143,20 @@ body {
 .bear-ear {
   position: absolute;
   top: 2px;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background: #D4956F;
   border-radius: 50%;
   z-index: 0;
 }
-.bear-ear.left  { left: -4px; }
-.bear-ear.right { right: -4px; }
+.bear-ear.left  { left: 14px; }
+.bear-ear.right { right: 14px; }
 
 /* Telinga dalam */
 .bear-ear::after {
   content: '';
   position: absolute;
-  inset: 5px;
+  inset: 4px;
   background: #E8A882;
   border-radius: 50%;
 }
@@ -180,7 +180,7 @@ body {
   content: '';
   position: absolute;
   bottom: 12px;
-  width: 36px;
+  width: 34px;
   height: 22px;
   background: #E8A882;
   border-radius: 50%;
@@ -189,14 +189,14 @@ body {
 /* Mata */
 .bear-eye {
   position: absolute;
-  top: 24px;
-  width: 10px;
-  height: 10px;
+  top: 22px;
+  width: 9px;
+  height: 9px;
   background: #3D2314;
   border-radius: 50%;
 }
-.bear-eye.left  { left: 15px; }
-.bear-eye.right { right: 15px; }
+.bear-eye.left  { left: 17px; }
+.bear-eye.right { right: 17px; }
 
 /* Kilap mata */
 .bear-eye::after {
@@ -213,11 +213,11 @@ body {
 /* Hidung */
 .bear-nose {
   position: absolute;
-  top: 36px;
+  top: 35px;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 7px;
+  width: 9px;
+  height: 6px;
   background: #3D2314;
   border-radius: 40% 40% 50% 50%;
   z-index: 2;
@@ -226,14 +226,14 @@ body {
 /* Mulut */
 .bear-mouth {
   position: absolute;
-  top: 46px;
+  top: 43px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 8px;
-  border-bottom: 2.5px solid #3D2314;
-  border-left: 2.5px solid #3D2314;
-  border-right: 2.5px solid #3D2314;
+  width: 14px;
+  height: 7px;
+  border-bottom: 2px solid #3D2314;
+  border-left: 2px solid #3D2314;
+  border-right: 2px solid #3D2314;
   border-radius: 0 0 10px 10px;
   z-index: 2;
 }
@@ -241,14 +241,14 @@ body {
 /* Pipi blush */
 .bear-blush {
   position: absolute;
-  top: 40px;
-  width: 18px;
-  height: 10px;
+  top: 36px;
+  width: 16px;
+  height: 9px;
   background: rgba(255, 107, 157, 0.35);
   border-radius: 50%;
 }
-.bear-blush.left  { left: 5px; }
-.bear-blush.right { right: 5px; }
+.bear-blush.left  { left: 6px; }
+.bear-blush.right { right: 6px; }
 
 /* Badan */
 .bear-body {
@@ -288,10 +288,10 @@ body {
 /* Hati yang dipegang beruang */
 .bear-heart {
   position: absolute;
-  bottom: -10px;
+  bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px;
+  font-size: 15px;
   color: var(--heart);
   animation: heartBeat 1.4s ease-in-out infinite;
   filter: drop-shadow(0 2px 4px rgba(255, 77, 121, 0.4));
@@ -299,9 +299,9 @@ body {
 
 @keyframes heartBeat {
   0%, 100% { transform: translateX(-50%) scale(1); }
-  14%       { transform: translateX(-50%) scale(1.2); }
+  14%       { transform: translateX(-50%) scale(1.15); }
   28%       { transform: translateX(-50%) scale(1); }
-  42%       { transform: translateX(-50%) scale(1.15); }
+  42%       { transform: translateX(-50%) scale(1.1); }
   56%       { transform: translateX(-50%) scale(1); }
 }
 
@@ -1048,9 +1048,21 @@ body {
   }
 
   .bear-head  { width: 68px; height: 64px; }
+  .bear-head::after { bottom: 10px; width: 30px; height: 18px; }
   .bear-body  { width: 58px; height: 48px; }
-  .bear-ear   { width: 24px; height: 24px; }
-  .bear-eye   { width: 8px; height: 8px; }
+  .bear-belly { width: 30px; height: 25px; }
+  .bear-ear   { width: 22px; height: 22px; top: 2px; }
+  .bear-ear.left  { left: 20px; }
+  .bear-ear.right { right: 20px; }
+  .bear-eye   { width: 7px; height: 7px; top: 18px; }
+  .bear-eye.left  { left: 15px; }
+  .bear-eye.right { right: 15px; }
+  .bear-nose  { width: 7px; height: 5px; top: 29px; }
+  .bear-mouth { width: 12px; height: 6px; top: 36px; }
+  .bear-blush { width: 14px; height: 7px; top: 30px; }
+  .bear-blush.left  { left: 5px; }
+  .bear-blush.right { right: 5px; }
+  .bear-heart { font-size: 13px; bottom: 2px; }
 
   .letter-paper {
     padding: 1.5rem 1.2rem 1.2rem;
@@ -1089,9 +1101,21 @@ body {
   }
 
   .bear-head  { width: 60px; height: 56px; }
+  .bear-head::after { bottom: 8px; width: 26px; height: 16px; }
   .bear-body  { width: 50px; height: 42px; }
-  .bear-ear   { width: 20px; height: 20px; }
-  .bear-eye   { width: 7px; height: 7px; }
+  .bear-belly { width: 26px; height: 22px; }
+  .bear-ear   { width: 18px; height: 18px; top: 1px; }
+  .bear-ear.left  { left: 24px; }
+  .bear-ear.right { right: 24px; }
+  .bear-eye   { width: 6px; height: 6px; top: 15px; }
+  .bear-eye.left  { left: 13px; }
+  .bear-eye.right { right: 13px; }
+  .bear-nose  { width: 6px; height: 4px; top: 25px; }
+  .bear-mouth { width: 10px; height: 5px; top: 31px; }
+  .bear-blush { width: 12px; height: 6px; top: 26px; }
+  .bear-blush.left  { left: 4px; }
+  .bear-blush.right { right: 4px; }
+  .bear-heart { font-size: 11px; bottom: 1px; }
 
   .envelope-seal {
     width: 44px;
