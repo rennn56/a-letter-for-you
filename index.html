@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter For You 💌</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Fonts: Dancing Script (handwriting) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       BACKGROUND DECORATIONS
+       Hati-hati kecil mengambang di bg
+  ══════════════════════════════════════ -->
+  <div class="bg-particles" aria-hidden="true">
+    <span class="particle">♡</span>
+    <span class="particle">✿</span>
+    <span class="particle">♡</span>
+    <span class="particle">✦</span>
+    <span class="particle">♡</span>
+    <span class="particle">✿</span>
+    <span class="particle">♡</span>
+    <span class="particle">✦</span>
+    <span class="particle">♡</span>
+    <span class="particle">✿</span>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MAIN SCENE
+  ══════════════════════════════════════ -->
+  <main class="scene" id="scene">
+
+    <!-- Judul atas -->
+    <header class="site-header">
+      <p class="subtitle">ada sesuatu untukmu...</p>
+      <h1 class="site-title">A Letter For You 💌</h1>
+    </header>
+
+    <!-- ── KARAKTER BERUANG ── -->
+    <div class="bear-wrapper" aria-label="Karakter beruang lucu">
+      <div class="bear">
+        <!-- Telinga -->
+        <div class="bear-ear left"></div>
+        <div class="bear-ear right"></div>
+        <!-- Kepala -->
+        <div class="bear-head">
+          <!-- Muka -->
+          <div class="bear-eye left"></div>
+          <div class="bear-eye right"></div>
+          <div class="bear-nose"></div>
+          <div class="bear-mouth"></div>
+          <!-- Pipi blush -->
+          <div class="bear-blush left"></div>
+          <div class="bear-blush right"></div>
+        </div>
+        <!-- Badan -->
+        <div class="bear-body">
+          <div class="bear-belly"></div>
+          <!-- Tangan memegang hati -->
+          <div class="bear-arm left"></div>
+          <div class="bear-arm right"></div>
+          <div class="bear-heart">♡</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ENVELOPE SECTION ── -->
+    <section class="envelope-section" id="envelopeSection">
+
+      <!-- Amplop -->
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Klik untuk membuka surat">
+
+        <!-- Flap atas (tutup amplop) -->
+        <div class="envelope-flap" id="envelopeFlap">
+          <div class="flap-deco">♡</div>
+        </div>
+
+        <!-- Badan amplop -->
+        <div class="envelope-body">
+          <div class="envelope-seal" id="envelopeSeal">
+            <span>💌</span>
+          </div>
+          <p class="envelope-to">Untuk: <strong>[Hanna]</strong></p>
+        </div>
+
+        <!-- Surat (tersembunyi di dalam amplop, akan naik saat dibuka) -->
+        <div class="letter-preview" id="letterPreview" aria-hidden="true" role="button" tabindex="-1" aria-label="Klik untuk membaca surat">
+          <div class="letter-top-peek">✿ ♡ ✿</div>
+        </div>
+
+        <!-- Hint teks setelah surat keluar -->
+        <p class="letter-hint" id="letterHint" aria-live="polite">
+          Ada sesuatu yang ingin aku sampaikan... 💌
+        </p>
+
+      </div>
+
+      <!-- Tombol buka -->
+      <button class="btn-open" id="btnOpen" type="button">
+        Buka Surat 💌
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       LETTER OVERLAY
+       Muncul setelah amplop dibuka
+  ══════════════════════════════════════ -->
+  <div class="letter-overlay" id="letterOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Surat untukmu" tabindex="-1">
+
+    <!-- Hati beterbangan saat surat terbuka -->
+    <div class="letter-particles" aria-hidden="true" id="letterParticles"></div>
+
+    <!-- Kertas surat -->
+    <article class="letter-paper" id="letterPaper">
+
+      <div class="letter-deco-top" aria-hidden="true">✿ ♡ ✿ ♡ ✿</div>
+
+      <h2 class="letter-greeting">Hai, sayanggg&nbsp;🌸</h2>
+
+      <!-- Isi surat — setiap <p> muncul bertahap (stagger) -->
+      <div class="letter-body" id="letterBody">
+
+        <p class="letter-line">
+          Makasih ya udah mau luangin waktu buat buka surat kecil ini. Jujur, dari tadi aku bingung dan kepikiran terus mau mulai dari mana. Tiap kali sadar aku udah bikin kamu sedih atau kepikiran, rasanya dada aku ikut sesak dan nggak tenang sama sekali.
+        </p>
+
+        <p class="letter-line">
+          Dari lubuk hati aku yang paling dalam, aku mau minta maaf ya, sayang. Maaf banget... Aku bener-bener nyesel karena udah bikin hari-hari kamu jadi berat dan bikin kamu ngerasa nggak nyaman gara-gara aku.
+        </p>
+
+        <p class="letter-line">
+          Aku sadar, mungkin ada perkataan aku yang kurang peka, sikap aku yang egois, atau tindakan aku yang sempat bikin kamu ngerasa nggak dihargai. Nggak ada alasan apa pun yang bisa membenarkan itu. Maaf ya kalau kebodohanku sempat bikin senyum manis kamu hilang...
+        </p>
+
+        <p class="letter-line highlight">
+          "Kamu itu orang yang paling berharga buat aku, dan hal terakhir yang pengen aku lakuin di dunia ini adalah menyakiti hati kamu." 🌷
+        </p>
+
+        <p class="letter-line">
+          Aku nggak mau cuma pinter ngomong atau bikin janji-janji manis yang kosong. Yang pengen aku lakuin sekarang adalah belajar jadi cowok yang lebih peka, lebih ngertiin kamu, dan ngebuktiin rasa sayangku lewat tindakan nyata setiap harinya.
+        </p>
+
+        <p class="letter-line">
+          Sayang, kamu nggak harus langsung maafin aku atau bersikap seolah semuanya baik-baik aja kok. Kecewa dan marahnya kamu itu wajar banget, dan perasaan kamu sangat berarti buat aku. Kalau kamu masih butuh waktu buat nenangin hati, ambil waktu sebanyak yang kamu mau ya... Aku bakal sabar nungguin kamu di sini.
+        </p>
+
+        <p class="letter-line">
+          Peluk jauh dulu ya dari aku? Kapan pun kamu udah siap buat cerita atau ngobrol lagi, aku selalu ada di sini buat kamu. Aku sayang banget sama kamu.
+        </p>
+
+        <div class="letter-sign">
+          <p>Dengan sepenuh hati & rasa sayang,</p>
+          <p class="letter-name">💕 [Daniel (Renn)]</p>
+        </div>
+
+      </div>
+
+      <div class="letter-deco-bottom" aria-hidden="true">♡ ✿ ♡ ✿ ♡</div>
+
+      <!-- Tombol respons — muncul bertahap setelah surat selesai dibaca -->
+      <div class="letter-actions" id="letterActions" aria-hidden="true">
+        <button class="btn-forgive" id="btnForgive" type="button">
+          Aku Maafin Kamu 💗
+        </button>
+        <button class="btn-later" id="btnLater" type="button">
+          Aku Masih Kesal 🥺
+        </button>
+      </div>
+
+    </article>
+
+  </div>
+
+  <!-- ══════════════════════════════════════
+       RESPONSE SCREENS
+  ══════════════════════════════════════ -->
+
+  <!-- Layar: dimaafkan -->
+  <div class="response-screen" id="screenForgiven" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Pesan Terima Kasih" tabindex="-1">
+    <div class="response-content">
+      <!-- Burst partikel hati di belakang konten -->
+      <div class="response-burst" aria-hidden="true" id="responseBurst"></div>
+      <div class="response-bear happy" aria-hidden="true">🐻</div>
+      <h2>Terima kasih, sayang 🥺💖</h2>
+      <p>Aku seneng banget kamu mau ngasih kesempatan itu.</p>
+      <p>Aku janji nggak akan sia-siain kepercayaan kamu. Aku sayang kamu.</p>
+      
+      <!-- Tombol Aksi Layar Dimaafkan -->
+      <div class="response-actions">
+        <button class="btn-whatsapp" id="btnWhatsapp" type="button">
+          Kirim Pesan WhatsApp 💬
+        </button>
+        <button class="btn-back" id="btnBackForgiven" type="button">↩ Baca lagi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layar: masih kesal -->
+  <div class="response-screen screen-later" id="screenLater" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Pesan Pengertian" tabindex="-1">
+    <div class="response-content">
+      <div class="response-icon" aria-hidden="true">🌙</div>
+      <h2>Nggak apa-apa. 🤍</h2>
+      <p>Aku ngerti kok. Perasaan kamu valid, dan kamu nggak harus buru-buru.</p>
+      <p>Aku tetap ingin memperbaiki semuanya. Aku di sini, nunggu kamu.</p>
+      <button class="btn-back" id="btnBackLater" type="button">↩ Baca lagi</button>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=unicode" charset="UTF-8"></script>
+</body>
+</html>
+
