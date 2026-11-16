@@ -279,10 +279,11 @@ function onBtnForgive() {
 
 /**
  * openWhatsApp()
- * Membuka WhatsApp dengan URL yang disesuaikan dengan jenis perangkat:
- * - Mobile: https://wa.me/NOMOR?text=PESAN (memicu pembukaan langsung aplikasi WhatsApp di HP)
- * - Desktop: https://web.whatsapp.com/send?phone=NOMOR&text=PESAN (membuka WhatsApp Web di browser desktop)
- * Menggunakan window.open dengan target _blank dan rel="noopener,noreferrer".
+ * Membuka WhatsApp dengan URL dan metode navigasi yang disesuaikan:
+ * - Mobile / Android: https://wa.me/NOMOR?text=PESAN menggunakan window.location.href
+ *   agar browser mobile langsung mendelegasikan URL ke aplikasi native WhatsApp (App Links).
+ * - Desktop: https://web.whatsapp.com/send?phone=NOMOR&text=PESAN menggunakan window.open
+ *   dengan target _blank dan rel="noopener,noreferrer" menuju WhatsApp Web di tab baru.
  */
 function openWhatsApp() {
   const defaultMessage = WHATSAPP_CONFIG.defaultMessage;
@@ -311,14 +312,17 @@ function openWhatsApp() {
   const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '') ||
     (Boolean(navigator.userAgentData && navigator.userAgentData.mobile));
 
-  // Tautan mobile membuka aplikasi WhatsApp (wa.me), sedangkan desktop membuka WhatsApp Web
-  const waUrl = isMobile
-    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-
-  console.log(`📱 Mengarahkan WhatsApp (${isMobile ? 'Mobile: wa.me' : 'Desktop: web.whatsapp.com'}):`, waUrl);
-
-  window.open(waUrl, '_blank', 'noopener,noreferrer');
+  if (isMobile) {
+    // Mobile / Android: Gunakan navigasi langsung window.location.href
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    console.log('📱 Mengarahkan WhatsApp Mobile (wa.me via window.location.href):', waUrl);
+    window.location.href = waUrl;
+  } else {
+    // Desktop: Gunakan window.open() menuju WhatsApp Web di tab baru
+    const waUrl = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+    console.log('💻 Mengarahkan WhatsApp Desktop (web.whatsapp.com via window.open):', waUrl);
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  }
 }
 
 function onBtnLater() {
