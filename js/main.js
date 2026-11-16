@@ -279,8 +279,9 @@ function onBtnForgive() {
 
 /**
  * openWhatsApp()
- * Membuka WhatsApp via https://web.whatsapp.com/send langsung
- * untuk menghindari issue redirect encoding wa.me.
+ * Membuka WhatsApp dengan URL yang disesuaikan dengan jenis perangkat:
+ * - Mobile: https://wa.me/NOMOR?text=PESAN (memicu pembukaan langsung aplikasi WhatsApp di HP)
+ * - Desktop: https://web.whatsapp.com/send?phone=NOMOR&text=PESAN (membuka WhatsApp Web di browser desktop)
  * Menggunakan window.open dengan target _blank dan rel="noopener,noreferrer".
  */
 function openWhatsApp() {
@@ -305,7 +306,17 @@ function openWhatsApp() {
   console.groupEnd();
 
   const phoneNumber = WHATSAPP_CONFIG.phoneNumber;
-  const waUrl = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+  // Deteksi apakah pengguna mengakses dari perangkat mobile atau desktop
+  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '') ||
+    (Boolean(navigator.userAgentData && navigator.userAgentData.mobile));
+
+  // Tautan mobile membuka aplikasi WhatsApp (wa.me), sedangkan desktop membuka WhatsApp Web
+  const waUrl = isMobile
+    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+  console.log(`📱 Mengarahkan WhatsApp (${isMobile ? 'Mobile: wa.me' : 'Desktop: web.whatsapp.com'}):`, waUrl);
 
   window.open(waUrl, '_blank', 'noopener,noreferrer');
 }
