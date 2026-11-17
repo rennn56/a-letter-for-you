@@ -17,7 +17,7 @@
 ══════════════════════════════════════════════════════════ */
 const WHATSAPP_CONFIG = {
   // Ganti placeholder ini dengan nomor WhatsApp asli pemilik website:
-  phoneNumber: '6283131855265',
+  phoneNumber: '...',
 
   // Pesan otomatis yang akan disiapkan di kolom chat WhatsApp:
   // Menggunakan Unicode escape sequence (\u{1F497} = 💗, \u{1F97A} = 🥺, \u2764\uFE0F = ❤️)
